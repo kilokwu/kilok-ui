@@ -1,11 +1,9 @@
 <template>
   <div id="app">
-    <g-button >我爱JS</g-button>
-    <g-button iconPosition="left"  icon='settings'>我爱JS</g-button>
+    <g-button iconPosition="left"  icon='loading'>我爱JS</g-button>
     <g-button iconPosition="right" icon='settings'>我爱JS</g-button>
-    <svg class="g-icon">
-      <use xlink:href="#i-download" ></use>
-    </svg>
+    <g-button iconPosition="left" icon='loading'>我爱JS</g-button>
+   
   </div>
 </template>
 <style>
