@@ -13,3 +13,34 @@ new Vue({
   router,
   render: h => h(App)
 }).$mount('#app')
+
+import chai from 'chai'
+const expect = chai.expect
+//单元测试
+{
+  const Constructor = Vue.extend(Button)
+  const button = new Constructor({
+    propsData:{
+      icon:'settings',
+
+    }
+  })
+  button.$mount()
+  let userElement = button.$el.querySelector('use')
+  let href = userElement.getAttribute('xlink:href')
+  expect(href).to.eq('#i-settings')
+}
+
+{
+  const Constructor = Vue.extend(Button)
+  const button = new Constructor({
+    propsData:{
+      icon:'settings',
+      loading:true
+    }
+  })
+  button.$mount()
+  let userElement = button.$el.querySelector('use')
+  let href = userElement.getAttribute('xlink:href')
+  expect(href).to.eq('#i-loading')
+}
