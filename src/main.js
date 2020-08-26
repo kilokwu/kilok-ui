@@ -5,8 +5,10 @@ import './assets/index.scss'
 Vue.config.productionTip = false
 import Icon from './components/icon.vue'
 import Button from "./components/button";
+import ButtonGroup from './components/button-group.vue'
 Vue.component('g-button',Button)
 Vue.component('g-icon',Icon)
+Vue.component('g-button-group',ButtonGroup)
 new Vue({
   router,
   render: h => h(App)

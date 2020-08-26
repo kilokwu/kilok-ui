@@ -1,17 +1,23 @@
 <template>
-  <button class="g-button" :class="{ [`icon-${iconPosition}`]: true }">
-   <g-icon class="icon" v-if="icon" :name="icon"></g-icon>
-   <g-icon class="loading" name="loading"></g-icon>
+
+  <button class="g-button" :class="{ [`icon-${iconPosition}`]: true }" @click="$emit('click')">
+   <g-icon class="icon" v-if="icon && !loading" :name="icon"></g-icon>
+   <g-icon v-if="loading" class="loading icon" name="loading"></g-icon>
     <div class="content">
       <slot />
     </div>
   </button>
+  
 </template>
 
 <script>
 export default {
   props: {
     icon: {},
+    loading:{
+      type:Boolean,
+      default:false
+    },
     iconPosition: {
       type: String,
       default: "left",
@@ -27,50 +33,22 @@ export default {
 @keyframes spin{
   0%{
     transform:rotate(0deg);
-    transform:rotate(360deg);
+  }
+  100%{
+     transform:rotate(360deg);
   }
 }
 .g-button {
   font-size: var(--font-size);
-  height: var(--button-height);
-  margin: 0.3em;
-  padding: 0 1em;
-  vertical-align: middle;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--border-color);
-  background: var(--button-bg);
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  &:hover {
-    border-color: var(--border-color-hover);
+  margin-top:.5em;margin-right:.5em;height: var(--button-height);padding: 0 1em;vertical-align: middle;border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);background: var(--button-bg);display: inline-flex;justify-content: center;align-items: center;
+  &:hover {border-color: var(--border-color-hover);}
+  &:active {background-color: var(--button-active-bg);}
+  &:focus {outline: none;}
+  > .content {order: 2;}
+  > .icon {order: 1;margin-right: 0.1em;}&.icon-right {
+    > .content { order: 1;}
+    > .icon {order: 2;margin-right: 0em;margin-left: 0.1em;}}
+  .loading{animation: spin 2s infinite linear;}
   }
-  &:active {
-    background-color: var(--button-active-bg);
-  }
-  &:focus {
-    outline: none;
-  }
-
-  > .content {
-    order: 2;
-  }
-  > .icon {
-    order: 1;
-    margin-right: 0.1em;
-  }
-  &.icon-right {
-    > .content {
-      order: 1;
-    }
-    > .icon {
-      order: 2;
-      margin-right: 0em;
-      margin-left: 0.1em;
-    }
-  }
-  .loading{
-    animation: spin 2s infinite linear;
-  }
-}
 </style>
