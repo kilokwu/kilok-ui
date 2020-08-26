@@ -5,6 +5,7 @@
     <g-button iconPosition="right"  :loading="loading3" @click="loading3 = !loading3">我爱JS</g-button>
    
     <g-button-group>
+      <div></div>
       <g-button icon="left">后退</g-button>
       <g-button >更多</g-button>
       <g-button icon="right" iconPosition="right">前进</g-button>
