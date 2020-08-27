@@ -9,12 +9,8 @@
 </template>
 
 <script>
-import Vue from 'vue'
-import Icon from './icon'
 export default {
-  components:{
-    'g-icon':Icon
-  },
+  name:'GuluButton',
   props: {
     icon: {},
     loading:{
@@ -43,7 +39,7 @@ export default {
 }
 .g-button {
   font-size: var(--font-size);
-  margin-top:.5em;margin-right:.5em;height: var(--button-height);padding: 0 1em;vertical-align: middle;border-radius: var(--border-radius);
+  margin-top:.5em;margin-right:5px;height: var(--button-height);padding: 0 1em;vertical-align: middle;border-radius: var(--border-radius);
   border: 1px solid var(--border-color);background: var(--button-bg);display: inline-flex;justify-content: center;align-items: center;
   &:hover {border-color: var(--border-color-hover);}
   &:active {background-color: var(--button-active-bg);}

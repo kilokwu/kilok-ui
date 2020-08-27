@@ -5,8 +5,9 @@
 </template>
 
 <script>
-import '../svg'
+import '../../svg'
 export default {
+    name:"GuluIcon",
     props:['name']
 };
 </script>
@@ -15,5 +16,6 @@ export default {
 .g-icon {
   width: 1em;
   height: 1em;
+  margin: 1px;
 }
 </style>
