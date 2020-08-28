@@ -9,6 +9,10 @@
       <g-input value="王五" @change="inputChange"></g-input>
     </div>
     <div class="box">
+      <g-input   v-model="message"></g-input>
+      <p>{{message}}</p>
+    </div>
+    <div class="box">
       <g-button
         iconPosition="left"
         :loading="loading1"
@@ -49,6 +53,7 @@ export default {
       loading1: false,
       loading2: false,
       loading3: false,
+      message:'hi'
     };
   },
   methods: {

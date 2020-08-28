@@ -10,23 +10,23 @@ describe("Input", () => {
   });
   describe("props", () => {
     const Constructor = Vue.extend(Input);
-    let vm
+    let vm;
     afterEach(() => {
       vm.$destroy();
     });
 
     it("接收 value", () => {
-       vm = new Constructor({
+      vm = new Constructor({
         propsData: {
           value: "1234",
         },
       }).$mount();
-      const inputElement = vm.$el.querySelector("input")
+      const inputElement = vm.$el.querySelector("input");
       expect(inputElement.value).to.equal("1234");
     });
 
     it("接收 disabled", () => {
-       vm = new Constructor({
+      vm = new Constructor({
         propsData: {
           disabled: true,
         },
@@ -36,7 +36,7 @@ describe("Input", () => {
     });
 
     it("接收 readonly", () => {
-       vm = new Constructor({
+      vm = new Constructor({
         propsData: {
           readonly: true,
         },
@@ -46,7 +46,7 @@ describe("Input", () => {
     });
 
     it("接收 error", () => {
-       vm = new Constructor({
+      vm = new Constructor({
         propsData: {
           error: "你错了",
         },
@@ -60,23 +60,26 @@ describe("Input", () => {
 
   describe("事件", () => {
     const Constructor = Vue.extend(Input);
-    let vm
-    afterEach(()=>{
-        vm.$destroy
-
-    })
+    let vm;
+    afterEach(() => {
+      vm.$destroy;
+    });
     it("支持 change/input/focus/blur 事件", () => {
-      ['change','input','focus','blur']
-      .forEach((eventName)=>{
-        vm = new Constructor({}).$mount()
+      ["change", "input", "focus", "blur"].forEach((eventName) => {
+        vm = new Constructor({}).$mount();
         const callback = sinon.fake();
-        vm.$on(eventName,callback)
-        let event = new Event(eventName)
-        let inputElement = vm.$el.querySelector('input')
-        inputElement.dispatchEvent(event)
-        console.log(eventName)
-        expect(callback).to.have.been.calledWith(event)
-      })
+        vm.$on(eventName, callback);
+        let event = new Event(eventName);
+        //为事件添加target
+        Object.defineProperty(event, "target", {
+          value: { value: "hi" },
+          enumerable: true,
+        });
+        let inputElement = vm.$el.querySelector("input");
+        inputElement.dispatchEvent(event);
+        console.log(eventName);
+        expect(callback).to.have.been.calledWith("hi");
+      });
     });
   });
 });
