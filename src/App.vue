@@ -39,6 +39,25 @@
         <g-button icon="right" iconPosition="right">前进</g-button>
       </g-button-group>
     </div>
+    <g-row>
+      <g-col>1</g-col>
+      <g-col>2</g-col>
+    </g-row>
+    <g-row>
+      <g-col span="4">1</g-col>
+      <g-col span="20">2</g-col>
+    </g-row>
+        <g-row>
+      <g-col>1</g-col>
+      <g-col>2</g-col>
+      <g-col>2</g-col>
+    </g-row>
+        <g-row>
+      <g-col>1</g-col>
+      <g-col>1</g-col>
+      <g-col>1</g-col>
+      <g-col>2</g-col>
+    </g-row>
   </div>
 </template>
 <style lang="scss">
