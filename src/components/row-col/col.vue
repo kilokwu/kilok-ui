@@ -1,10 +1,5 @@
 <template>
-  <div
-    class="col"
-    :class="[span && `col-${span}`, offset && `offset-${offset}`]"
-    :style="{paddingLeft: gutter/2+'px',paddingRight: gutter/2+'px'}"
-  >
-  <div style="border:1px solid green;height:100px"></div>
+  <div class="col" :class="colClasses" :style="colSytle">
     <slot></slot>
   </div>
 </template>
@@ -19,16 +14,25 @@ export default {
     offset: {
       type: [Number, String],
     },
- 
   },
-  mounted(){
-      console.log('col mounted')
+  data() {
+    return {
+      gutter: 0,
+    };
   },
-  data(){
-      return{
-          gutter:0
-      }
-  }
+  computed: {
+    colSytle() {
+      console.log("gutter变了");
+      return {
+        paddingLeft: this.gutter / 2 + "px",
+        paddingRight: this.gutter / 2 + "px",
+      };
+    },
+    colClasses() {
+      let { span, offset } = this;
+      return [span && `col-${span}`, offset && `offset-${offset}`];
+    },
+  },
 };
 </script>
 
