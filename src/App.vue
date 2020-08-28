@@ -1,63 +1,69 @@
 <template>
   <div id="app">
     <div class="box">
-      <g-input value="张三"></g-input>
-      <g-input value="李四" :disabled="true"></g-input>
-      <g-input value="李四" :readonly="true"></g-input>
+      <k-input value="张三"></k-input>
+      <k-input value="李四" :disabled="true"></k-input>
+      <k-input value="李四" :readonly="true"></k-input>
     </div>
     <div class="box">
-      <g-input value="王五" @change="inputChange"></g-input>
+      <k-input value="王五" @change="inputChange"></k-input>
     </div>
     <div class="box">
-      <g-input   v-model="message"></g-input>
+      <k-input   v-model="message"></k-input>
       <p>{{message}}</p>
     </div>
     <div class="box">
-      <g-button
+      <k-button
         iconPosition="left"
         :loading="loading1"
         @click="loading1 = !loading1"
-        >我爱JS</g-button
+        >我爱JS</k-button
       >
-      <g-button
+      <k-button
         iconPosition="right"
         icon="settings"
         :loading="loading2"
         @click="loading2 = !loading2"
-        >我爱JS</g-button
+        >我爱JS</k-button
       >
-      <g-button
+      <k-button
         iconPosition="right"
         :loading="loading3"
         @click="loading3 = !loading3"
-        >我爱JS</g-button
+        >我爱JS</k-button
       >
       <div id="test"></div>
-      <g-button-group>
-        <g-button icon="left">后退</g-button>
-        <g-button>更多</g-button>
-        <g-button icon="right" iconPosition="right">前进</g-button>
-      </g-button-group>
+      <k-button-group>
+        <k-button icon="left">后退</k-button>
+        <k-button>更多</k-button>
+        <k-button icon="right" iconPosition="right">前进</k-button>
+      </k-button-group>
     </div>
-    <g-row>
-      <g-col>1</g-col>
-      <g-col>2</g-col>
-    </g-row>
-    <g-row>
-      <g-col span="4">1</g-col>
-      <g-col span="20">2</g-col>
-    </g-row>
-        <g-row>
-      <g-col>1</g-col>
-      <g-col>2</g-col>
-      <g-col>2</g-col>
-    </g-row>
-        <g-row>
-      <g-col>1</g-col>
-      <g-col>1</g-col>
-      <g-col>1</g-col>
-      <g-col>2</g-col>
-    </g-row>
+    <div style="broder:1px solide black">
+      <div style="border:1px solid black">
+
+    <k-row  gutter='20'>
+      <k-col>1</k-col>
+      <k-col >2</k-col>
+    </k-row>
+    <k-row  gutter='20'>
+      <k-col span='1' >1</k-col>
+      <k-col span='20' offset='2' >2</k-col>
+    </k-row>
+    <k-row  gutter='20'>
+      <k-col>1</k-col>
+      <k-col >2</k-col>
+      <k-col >2</k-col>
+    </k-row>
+    <k-row  gutter='20'>
+      <k-col >1</k-col>
+      <k-col >2</k-col>
+      <k-col >2</k-col>
+      <k-col >2</k-col>
+    </k-row>
+      </div>
+    </div>
+   
   </div>
 </template>
 <style lang="scss">
