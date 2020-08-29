@@ -40,8 +40,7 @@
       </k-button-group>
     </div>
     <div style="broder:1px solide black">
-      <div style="border:1px solid black">
-
+      
     <k-row  gutter='20'>
       <k-col>1</k-col>
       <k-col >2</k-col>
@@ -61,7 +60,7 @@
       <k-col >2</k-col>
       <k-col >2</k-col>
     </k-row>
-      </div>
+    
     </div>
    
   </div>
@@ -70,6 +69,7 @@
 .box {
   margin: 20px;
 }
+
 </style>
 <script>
 export default {

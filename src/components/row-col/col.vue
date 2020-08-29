@@ -41,6 +41,8 @@ export default {
   height: 100px;
   width: 50%;
   padding: 0 10px;
+  border: 1px solid red;
+
   $class-prefix: col-;
   @for $n from 1 through 24 {
     &.#{$class-prefix}#{$n} {
