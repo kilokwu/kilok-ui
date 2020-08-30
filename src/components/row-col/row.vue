@@ -40,6 +40,7 @@ export default {
 .row {
   border:1px solid red;
   display: flex;
+  flex-wrap: wrap;
   &.align-left{
     justify-content: flex-start;
   }

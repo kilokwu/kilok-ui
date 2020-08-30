@@ -42,14 +42,17 @@
     <div style="broder:1px solide black">
       
  
-    <k-row  gutter='20'>
+    <!-- <k-row  gutter='20'>
       <k-col span='4' :phone="{span:24}" :ipad="{span:8}" :narrow-pc="{span:4}" :pc="{span:2}" :wide-pc="{span:1}" >1</k-col>
       <k-col span='20' :phone="{span:24}" :ipad="{span:16}" :narrow-pc="{span:20}" :pc="{span:22}" :wide-pc="{span:23}">2</k-col>
-    </k-row>
+    </k-row> -->
     <k-row  gutter='20'>
-      <k-col>1</k-col>
-      <k-col >2</k-col>
-      <k-col >2</k-col>
+      <k-col  span='24'  :ipad="{span:12}" :narrow-pc="{span:8}">1</k-col>
+      <k-col span='24'  :ipad="{span:12}" :narrow-pc="{span:8}">2</k-col>
+      <k-col span='24'  :ipad="{span:12}" :narrow-pc="{span:8}">2</k-col>
+      <k-col span='24'  :ipad="{span:12}" :narrow-pc="{span:8}">2</k-col>
+      <k-col span='24'  :ipad="{span:12}" :narrow-pc="{span:8}">2</k-col>
+      <k-col span='24'  :ipad="{span:12}" :narrow-pc="{span:8}">2</k-col>
     </k-row>
   
     
