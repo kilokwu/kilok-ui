@@ -38,6 +38,9 @@ export default {
 
 <style lang="scss">
 .row {
+  margin-left:-10px;
+  margin-right:-10px;
+
   border:1px solid red;
   display: flex;
   flex-wrap: wrap;

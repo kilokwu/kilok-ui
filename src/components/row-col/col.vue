@@ -32,7 +32,6 @@ export default {
   },
   computed: {
     colSytle() {
-      console.log("gutter变了");
       return {
         paddingLeft: this.gutter / 2 + "px",
         paddingRight: this.gutter / 2 + "px",
