@@ -11,7 +11,7 @@
 <script>
 import Icon from "./icon";
 export default {
-  name:'GuluButton',
+  name:'KilokButton',
   components:{
     'g-icon':Icon
   },

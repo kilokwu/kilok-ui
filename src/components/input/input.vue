@@ -20,7 +20,7 @@
 <script>
 import Icon from "../button/icon";
 export default {
-  name: "GuluInput",
+  name: "KilokInput",
   components: {
     icon: Icon,
   },

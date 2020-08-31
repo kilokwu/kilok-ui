@@ -39,13 +39,7 @@
         <k-button icon="right" iconPosition="right">前进</k-button>
       </k-button-group>
     </div>
-    <div style="broder:1px solide black">
-      
- 
-    <!-- <k-row  gutter='20'>
-      <k-col span='4' :phone="{span:24}" :ipad="{span:8}" :narrow-pc="{span:4}" :pc="{span:2}" :wide-pc="{span:1}" >1</k-col>
-      <k-col span='20' :phone="{span:24}" :ipad="{span:16}" :narrow-pc="{span:20}" :pc="{span:22}" :wide-pc="{span:23}">2</k-col>
-    </k-row> -->
+    <!-- <div style="broder:1px solide black">   
     <k-row  gutter='20'>
       <k-col  span='24'  :ipad="{span:12}" :narrow-pc="{span:8}">1</k-col>
       <k-col span='24'  :ipad="{span:12}" :narrow-pc="{span:8}">2</k-col>
@@ -54,13 +48,35 @@
       <k-col span='24'  :ipad="{span:12}" :narrow-pc="{span:8}">2</k-col>
       <k-col span='24'  :ipad="{span:12}" :narrow-pc="{span:8}">2</k-col>
     </k-row>
-  
-    
-    </div>
+    </div> -->
+    <k-layout style="height:100vh">
+        <k-sider >sider</k-sider>
+      <k-layout>
+      <k-header >header</k-header>
+      <k-content >content</k-content>
+      <k-footer >footer</k-footer>
+      </k-layout>
+    </k-layout>
    
   </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
+
+.sider{
+  background: #333;
+  width: 150px;
+}
+.sider.slide-enter, .sider.slide-leave-to{
+  margin-left: -150px;
+}
+.header{
+  height: 100px;
+  background: #999;
+}
+.footer{
+  height: 100px;
+  background: #999;
+}
 .box {
   margin: 20px;
 }
