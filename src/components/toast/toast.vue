@@ -1,14 +1,14 @@
 <template>
   <div class="wrapper" :class="toastClasses">
     <div class="toast" ref="toast">
-        <div class="message">
-          <slot v-if="!enableHtml"></slot>
-          <div v-else v-html="$slots.default[0]"></div>
-        </div>
-        <div class="line" ref="line"></div>
-        <span class="close" v-if="closeButton" @click="onClickClose">
-          {{ closeButton.text }}
-        </span>
+      <div class="message">
+        <slot v-if="!enableHtml"></slot>
+        <div v-else v-html="$slots.default[0]"></div>
+      </div>
+      <div class="line" ref="line"></div>
+      <span class="close" v-if="closeButton" @click="onClickClose">
+        {{ closeButton.text }}
+      </span>
     </div>
   </div>
 </template>
@@ -18,16 +18,16 @@ export default {
   name: "KilokToast",
   props: {
     autoClose: {
-      type: [Boolean,Number],
+      type: [Boolean, Number],
       default: 5,
-      validator(value){
-          return value === false || typeof value === 'number'
-      }
+      validator(value) {
+        return value === false || typeof value === "number";
+      },
     },
-   
+
     closeButton: {
       type: Object,
-      default () {
+      default() {
         return {
           text: "关闭",
           callback: undefined,
@@ -52,8 +52,8 @@ export default {
     },
   },
   mounted() {
-    this.execAutoClose();
     this.updateStyle();
+    this.execAutoClose();
   },
   methods: {
     close() {
@@ -63,8 +63,10 @@ export default {
     },
     onClickClose() {
       this.close();
-        this.closeButton.callback();
-},
+      if (this.closeButton && typeof this.closeButton.callback === "function") {
+        this.closeButton.callback(this); //this === toast实例
+      }
+    },
     execAutoClose() {
       if (this.autoClose) {
         setTimeout(() => {
@@ -73,7 +75,11 @@ export default {
       }
     },
     updateStyle() {
-          this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px` 
+    
+        this.$refs.line.style.height = `${
+          this.$refs.toast.getBoundingClientRect().height
+      }px`;
+      
     },
   },
 };
@@ -83,18 +89,34 @@ export default {
 $font-size: 14px;
 $toast-min-height: 40px;
 $toast-bg: rgba(0, 0, 0, 0.74);
-$animation-duration:300ms;
+$animation-duration: 300ms;
 @keyframes slide-up {
-  0% { opacity: 0; transform: translateY(100%); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 @keyframes slide-down {
-  0% { opacity: 0; transform: translateY(-100%); }
-  100% { opacity: 1; transform: translateY(0%); }
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
 }
 @keyframes fade-in {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .wrapper {
   position: fixed;
@@ -102,25 +124,23 @@ $animation-duration:300ms;
   transform: translateX(-50%);
   &.position-top {
     top: 0;
-    .toast{
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        animation: slide-down $animation-duration;
-
+    .toast {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      animation: slide-down $animation-duration;
     }
   }
   &.position-bottom {
     bottom: 0;
-     .toast{
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        animation: slide-up $animation-duration;
-
+    .toast {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      animation: slide-up $animation-duration;
     }
   }
   &.position-middle {
     top: 50%;
-    transform: translateX(-50%),translateY(-50%);
+    transform: translateX(-50%), translateY(-50%);
     animation: fade-in $animation-duration;
   }
 }
