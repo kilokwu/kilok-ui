@@ -42,7 +42,7 @@ export default {
     },
     showToast() {
       this.$toast("欢迎光临", {
-        position: "middle",
+        position: "bottom",
         enableHtml: false,
         closeButton: {
           text: "已经欢迎",
