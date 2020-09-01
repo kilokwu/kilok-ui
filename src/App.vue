@@ -1,16 +1,5 @@
 <template>
   <div id="app">
-    <k-row gutter="20">
-      <k-col
-        :pc="{ span:1,offset:1 }"
-        >1</k-col
-      >
-      <k-col
-        :pc="{ span: 20 }"
-        >2</k-col
-      >
-    </k-row>
-
     <div>
       <button @click="showToast1">top</button>
       <button @click="showToast2">bottom</button>
@@ -72,8 +61,7 @@ export default {
             console.log("他说欢迎光临");
           },
         },
-        autoClose: false,
-        autoCloseDelay: 3,
+        autoClose: 3,
       });
     },
   },

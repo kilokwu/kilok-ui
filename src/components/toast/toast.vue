@@ -18,16 +18,16 @@ export default {
   name: "KilokToast",
   props: {
     autoClose: {
-      type: Boolean,
-      default: true,
+      type: [Boolean,Number],
+      default: 5,
+      validator(value){
+          return value === false || typeof value === 'number'
+      }
     },
-    autoCloseDelay: {
-      type: Number,
-      default: 50,
-    },
+   
     closeButton: {
       type: Object,
-      default: () => {
+      default () {
         return {
           text: "关闭",
           callback: undefined,
@@ -63,22 +63,17 @@ export default {
     },
     onClickClose() {
       this.close();
-      this.closeButton.callback();
-    },
+        this.closeButton.callback();
+},
     execAutoClose() {
       if (this.autoClose) {
         setTimeout(() => {
           this.close();
-        }, this.autoCloseDelay * 1000);
+        }, this.autoClose * 1000);
       }
     },
     updateStyle() {
-      this.$nextTick(() => {
-        console.log(this.$refs.toast.getBoundingClientRect());
-        this.$refs.line.style.height = `${
-          this.$refs.toast.getBoundingClientRect().height
-        }px`;
-      });
+          this.$refs.line.style.height = `${this.$refs.toast.getBoundingClientRect().height}px` 
     },
   },
 };
