@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <div>
-      <button @click="showToast">点我</button>
+      <button @click="showToast1">top</button>
+      <button @click="showToast2">bottom</button>
+      <button @click="showToast3">middle</button>
     </div>
   </div>
 </template>
@@ -40,9 +42,18 @@ export default {
     inputChange(e) {
       console.log(e.target.value);
     },
-    showToast() {
+    showToast1(){
+      this.showToast('top')
+    },
+    showToast2(){
+      this.showToast('bottom')
+    },
+    showToast3(){
+      this.showToast('middle')
+    },
+    showToast(position) {
       this.$toast("欢迎光临", {
-        position: "bottom",
+        position,
         enableHtml: false,
         closeButton: {
           text: "已经欢迎",
