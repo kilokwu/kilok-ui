@@ -44,9 +44,8 @@ export default {
         ...createClasses({ span, offset }),
         ...createClasses(ipad, 'ipad-' ),
         ...createClasses( narrowPc, 'narrow-pc-' ),
-        ...createClasses( pc, '-pc-' ),
+        ...createClasses( pc, 'pc-' ),
         ...createClasses( widePc, 'wide-pc-' ),
-
         ...(ipad ? [`col-ipad-${ipad.span}`] : []),
         ...(narrowPc ? [`col-narrowPc-${narrowPc.span}`] : []),
         ...(pc ? [`col-pc-${pc.span}`] : []),

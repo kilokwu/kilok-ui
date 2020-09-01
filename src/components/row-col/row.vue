@@ -25,7 +25,7 @@ export default {
   },
   computed: {
     rowStyle(){
-      let gutter = this
+      let gutter = this.gutter
       return {marginLeft:-gutter/2+'px',marginRight:-gutter/2+'px'}
     },
     rowClass(){
@@ -38,9 +38,7 @@ export default {
 
 <style lang="scss">
 .row {
-  margin-left:-10px;
-  margin-right:-10px;
-
+  margin: 0 -10px;
   border:1px solid red;
   display: flex;
   flex-wrap: wrap;

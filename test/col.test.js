@@ -44,12 +44,11 @@ describe("Col", () => {
     const Constructor = Vue.extend(Col);
     const vm = new Constructor({
       propsData: {
-        pc: { span: 1, offset: 2 },
+        pc: {span:1,offset:2},
       },
     }).$mount(div);
-    const element = vm.$el;
-    expect(element.classList.contains("col-pc-1")).to.eq(true);
-    expect(element.classList.contains("offset-pc-1")).to.eq(true);
+    expect(vm.$el.classList.contains("col-pc-1")).to.eq(true);
+    expect(vm.$el.classList.contains("offset-pc-2")).to.eq(true);
     div.remove();
     vm.$destroy();
   });
@@ -65,7 +64,7 @@ describe("Col", () => {
     }).$mount(div);
     const element = vm.$el;
     expect(element.classList.contains("col-ipad-1")).to.eq(true);
-    expect(element.classList.contains("offset-ipad-1")).to.eq(true);
+    expect(element.classList.contains("offset-ipad-2")).to.eq(true);
     div.remove();
     vm.$destroy();
   });
@@ -81,7 +80,7 @@ describe("Col", () => {
     }).$mount(div);
     const element = vm.$el;
     expect(element.classList.contains("col-narrow-pc-1")).to.eq(true);
-    expect(element.classList.contains("offset-narrow-pc-1")).to.eq(true);
+    expect(element.classList.contains("offset-narrow-pc-2")).to.eq(true);
     div.remove();
     vm.$destroy();
   });
@@ -97,7 +96,7 @@ describe("Col", () => {
     }).$mount(div);
     const element = vm.$el;
     expect(element.classList.contains("col-wide-pc-1")).to.eq(true);
-    expect(element.classList.contains("offset-wide-pc-1")).to.eq(true);
+    expect(element.classList.contains("offset-wide-pc-2")).to.eq(true);
     div.remove();
     vm.$destroy();
   });

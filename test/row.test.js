@@ -19,15 +19,17 @@ describe("Row", () => {
       <k-col span="12"></k-col>
       <k-col span="12"></k-col>
     </k-row>
-    `;
-    const vm = new Vue().$mount('div')
+    `
+    const vm = new Vue({
+      el:div
+    })
     setTimeout(() => {
-      const rows = vm.$el.querySelectorAll('.row')
-      expect(getComputedStyle(rows[0]).marginLeft).to.eq('-10px')
-      expect(getComputedStyle(rows[0]).marginRight).to.eq('-10px')
+      const row = vm.$el.querySelector('.row')
+      expect(getComputedStyle(row).marginLeft).to.eq('-10px')
+      expect(getComputedStyle(row).marginRight).to.eq('-10px')
       const cols = vm.$el.querySelectorAll('.col')
       expect(getComputedStyle(cols[0]).paddingLeft).to.eq('10px')
-      expect(getComputedStyle(cols[0]).paddingRight).to.eq('10px')
+      expect(getComputedStyle(cols[1]).paddingRight).to.eq('10px')
       done()
       vm.$destroy()
     }, 0);

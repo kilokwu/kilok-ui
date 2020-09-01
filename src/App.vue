@@ -1,5 +1,16 @@
 <template>
   <div id="app">
+    <k-row gutter="20">
+      <k-col
+        :pc="{ span:1,offset:1 }"
+        >1</k-col
+      >
+      <k-col
+        :pc="{ span: 20 }"
+        >2</k-col
+      >
+    </k-row>
+
     <div>
       <button @click="showToast1">top</button>
       <button @click="showToast2">bottom</button>
@@ -42,14 +53,14 @@ export default {
     inputChange(e) {
       console.log(e.target.value);
     },
-    showToast1(){
-      this.showToast('top')
+    showToast1() {
+      this.showToast("top");
     },
-    showToast2(){
-      this.showToast('bottom')
+    showToast2() {
+      this.showToast("bottom");
     },
-    showToast3(){
-      this.showToast('middle')
+    showToast3() {
+      this.showToast("middle");
     },
     showToast(position) {
       this.$toast("欢迎光临", {
