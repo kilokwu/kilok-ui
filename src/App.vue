@@ -39,24 +39,9 @@
         <k-button icon="right" iconPosition="right">前进</k-button>
       </k-button-group>
     </div>
-    <!-- <div style="broder:1px solide black">   
-    <k-row  gutter='20'>
-      <k-col  span='24'  :ipad="{span:12}" :narrow-pc="{span:8}">1</k-col>
-      <k-col span='24'  :ipad="{span:12}" :narrow-pc="{span:8}">2</k-col>
-      <k-col span='24'  :ipad="{span:12}" :narrow-pc="{span:8}">2</k-col>
-      <k-col span='24'  :ipad="{span:12}" :narrow-pc="{span:8}">2</k-col>
-      <k-col span='24'  :ipad="{span:12}" :narrow-pc="{span:8}">2</k-col>
-      <k-col span='24'  :ipad="{span:12}" :narrow-pc="{span:8}">2</k-col>
-    </k-row>
-    </div> -->
-    <k-layout style="height:100vh">
-        <k-sider >sider</k-sider>
-      <k-layout>
-      <k-header >header</k-header>
-      <k-content >content</k-content>
-      <k-footer >footer</k-footer>
-      </k-layout>
-    </k-layout>
+    <div>
+      <button @click="showToast">点我</button>
+    </div>
    
   </div>
 </template>
@@ -89,13 +74,16 @@ export default {
       loading1: false,
       loading2: false,
       loading3: false,
-      message:'hi'
+      message:'hi',
     };
   },
   methods: {
     inputChange(e) {
       console.log(e.target.value);
     },
+    showToast(){
+      this.$toast('i am toast')
+}
   },
 };
 </script>

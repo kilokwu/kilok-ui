@@ -14,6 +14,8 @@ import Header from './components/layout/header.vue'
 import Content from './components/layout/content.vue'
 import Footer from './components/layout/footer.vue'
 import Sider from './components/layout/sider.vue'
+import Toast from './components/toast/toast.vue'
+import plugin from './components/toast/plugin'
 Vue.component('k-input',Input)
 Vue.component('k-button',Button)
 Vue.component('k-icon',Icon)
@@ -25,9 +27,12 @@ Vue.component('k-header',Header)
 Vue.component('k-content',Content)
 Vue.component('k-footer',Footer)
 Vue.component('k-sider',Sider)
+Vue.component('k-toast',Toast)
+Vue.use(plugin)
 new Vue({
   router,
-  render: h => h(App)
+  render: h => h(App),
+
 }).$mount('#app')
 
 
