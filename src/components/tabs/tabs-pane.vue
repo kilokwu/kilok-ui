@@ -39,7 +39,6 @@ $red: red;
   flex-shrink: 0;
   padding: 0 1em;
   &.active {
-    background: $red;
   }
 }
 </style>
