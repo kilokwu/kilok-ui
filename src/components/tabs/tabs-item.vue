@@ -14,7 +14,7 @@ export default {
     };
   },
   props: {
-    disable: {
+    disabled: {
       type: Boolean,
       default: false,
     },
@@ -47,7 +47,11 @@ export default {
 $red: red;
 .tabs-item {
   flex-shrink: 0;
+  height: 100%;
   padding: 0 1em;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
   &.active {
     background: $red;
   }
