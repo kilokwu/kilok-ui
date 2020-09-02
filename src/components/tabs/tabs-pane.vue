@@ -38,7 +38,6 @@ $red: red;
 .tabs-pane {
   flex-shrink: 0;
   padding: 0 1em;
-  &.active {
-  }
+
 }
 </style>
