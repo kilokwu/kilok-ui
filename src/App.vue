@@ -1,10 +1,17 @@
 <template>
   <div id="app">
-    <div>
-      <button @click="showToast1">top</button>
-      <button @click="showToast2">bottom</button>
-      <button @click="showToast3">middle</button>
-    </div>
+    <g-tabs :selected.sync= "selectedTab" >
+      <g-tabs-head>
+        <g-tabs-item name="woman">女人</g-tabs-item>
+        <g-tabs-item name="finance">财经</g-tabs-item>
+        <g-tabs-item name="sports">体育</g-tabs-item>
+      </g-tabs-head>
+      <g-tabs-body>
+        <g-tabs-pane name="woman">女人相关信息</g-tabs-pane>
+        <g-tabs-pane name="finance">财经相关信息</g-tabs-pane>
+        <g-tabs-pane name="sports">体育相关信息</g-tabs-pane>
+      </g-tabs-body>
+    </g-tabs>
   </div>
 </template>
 <style lang="scss" scoped>
@@ -39,19 +46,7 @@ export default {
     };
   },
   methods: {
-    inputChange(e) {
-      console.log(e.target.value);
-    },
-    showToast1() {
-      this.showToast("top");
-    },
-    showToast2() {
-      this.showToast("bottom");
-    },
-    showToast3() {
-      this.showToast("middle");
-    },
-    showToast(position) {
+    showToast() {
       this.$toast("欢迎光临", {
         position,
         enableHtml: false,
