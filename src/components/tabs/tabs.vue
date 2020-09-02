@@ -32,13 +32,12 @@ export default {
         }
     },
     mounted(){
-        // this.$emit('update:selected','xxx')
-        // console.log('eventBus')
-        // console.log(this.eventBus)
+        if(this.$children.length === 0){
+          console && console.warn &&  console.warn('tabs的子组件应该是tabs-head和tabs-body,但是你没有写子组件')
+        }
         this.$children.forEach((vm)=>{
             if(vm.$options.name === 'KilokTabsHead'){
                 vm.$children.forEach((childVm)=>{
-                    // console.log(this.selected)
                     if(childVm.$options.name === 'KilokTabsItem' && childVm.name === this.selected){
                         this.eventBus.$emit('update:selected',this.selected,childVm)
                     }

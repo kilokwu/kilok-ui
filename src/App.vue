@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <k-tabs :selected.sync="selectedTab" @update:selected="yyy" >
+    <!-- <k-tabs :selected.sync="selectedTab" @update:selected="yyy" >
       <k-tabs-head >
         <template slot="actions">
           <button>
@@ -16,6 +16,9 @@
         <k-tabs-pane name="finance">财经相关信息</k-tabs-pane>
         <k-tabs-pane name="sports">体育相关信息</k-tabs-pane>
       </k-tabs-body>
+    </k-tabs> -->
+    <k-tabs>
+      <div>hi</div>
     </k-tabs>
   </div>
 </template>

@@ -9,9 +9,6 @@
 export default {
     name:'KilokTabsBody',
      inject:['eventBus'],
-    created(){
-
-    }
 }
 
 </script>
