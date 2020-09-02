@@ -13,7 +13,7 @@ export default {
             eventBus:new Vue()
         }
     },
-    porps:{//需要用户传值（前端开发者）传值
+    props:{//需要用户传值（前端开发者）传值
         selected:{
             type:String,
             required:true
@@ -35,7 +35,17 @@ export default {
         // this.$emit('update:selected','xxx')
         // console.log('eventBus')
         // console.log(this.eventBus)
-        this.eventBus.$emit('update:selected',this.name)
+        this.$children.forEach((vm)=>{
+            if(vm.$options.name === 'KilokTabsHead'){
+                vm.$children.forEach((childVm)=>{
+                    // console.log(this.selected)
+                    if(childVm.$options.name === 'KilokTabsItem' && childVm.name === this.selected){
+                        console.log(childVm.$el)
+                        this.eventBus.$emit('update:selected',this.selected,childVm)
+                    }
+                })
+            }
+        })
     }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <k-tabs :selectedT.sync="selectedTab" @update:selected="yyy" >
+    <k-tabs :selected.sync="selectedTab" @update:selected="yyy" >
       <k-tabs-head >
         <template slot="actions">
           <button>
