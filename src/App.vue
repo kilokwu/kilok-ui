@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <k-tabs :selectedT.sync="selectedTab" >
+    <k-tabs :selectedT.sync="selectedTab" @update:selected="yyy" >
       <k-tabs-head >
         <template slot="actions">
           <button>
@@ -31,7 +31,7 @@ export default {
       loading2: false,
       loading3: false,
       message: "hi",
-      selectedTab:''
+      selectedTab:'sports'
     };
   },
   methods: {
@@ -48,6 +48,10 @@ export default {
         autoClose: 3,
       });
     },
+  yyy(data){
+    console.log('yyy')  
+    console.log(data)
+  }
   },
 };
 </script>

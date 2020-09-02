@@ -8,12 +8,12 @@
 import Vue from 'vue'
 export default {
     name:"KilokTabs",
-    data(){
+    data(){//不需要用户传值，自身维护
         return{
             eventBus:new Vue()
         }
     },
-    porps:{
+    porps:{//需要用户传值（前端开发者）传值
         selected:{
             type:String,
             required:true
@@ -31,10 +31,11 @@ export default {
             eventBus:this.eventBus
         }
     },
-    created(){
+    mounted(){
         // this.$emit('update:selected','xxx')
         // console.log('eventBus')
         // console.log(this.eventBus)
+        this.eventBus.$emit('update:selected',this.name)
     }
 }
 </script>
