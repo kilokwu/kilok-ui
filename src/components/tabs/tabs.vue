@@ -5,8 +5,14 @@
 </template>
 
 <script>
+import Vue from 'vue'
 export default {
     name:"KilokTabs",
+    data(){
+        return{
+            eventBus:new Vue()
+        }
+    },
     porps:{
         selected:{
             type:String,
@@ -19,6 +25,16 @@ export default {
                 return ['horizontal','vertical'].indexOf(value)>=0
             }
         }
+    },
+    provide(){
+        return{
+            eventBus:this.eventBus
+        }
+    },
+    created(){
+        // this.$emit('update:selected','xxx')
+        // console.log('eventBus')
+        // console.log(this.eventBus)
     }
 }
 </script>

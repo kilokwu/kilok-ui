@@ -7,16 +7,11 @@
 
 <script>
 export default {
-  data() {
-    return {};
-  },
-  props: {},
-
-  computed: {},
-
-  mounted: {},
-
-  methods: {},
+    name:"KilokTabsHead",
+    inject:['eventBus'],
+    created(){
+ 
+    }
 };
 </script>
 <style scoped lang="scss"></style>
