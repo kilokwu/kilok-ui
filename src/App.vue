@@ -20,7 +20,7 @@
   </div>
 </template>
 <style lang="scss" scoped>
-// .sider { background: #333; width: 150px; } .sider.slide-enter, .sider.slide-leave-to { margin-left: -150px; } .header { height: 100px; background: #999; } .footer { height: 100px; background: #999; } .box { margin: 20px; }
+.sider { background: #333; width: 150px; } .sider.slide-enter, .sider.slide-leave-to { margin-left: -150px; } .header { height: 100px; background: #999; } .footer { height: 100px; background: #999; } .box { margin: 20px; }
 
 </style>
 <script>

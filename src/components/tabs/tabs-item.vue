@@ -54,7 +54,6 @@ $blue: blue;
   align-items: center;
   cursor: pointer;
   &.active {
-    background: $red;
     color: $blue;
     font-weight: bold;
   }

@@ -40,7 +40,6 @@ export default {
                 vm.$children.forEach((childVm)=>{
                     // console.log(this.selected)
                     if(childVm.$options.name === 'KilokTabsItem' && childVm.name === this.selected){
-                        console.log(childVm.$el)
                         this.eventBus.$emit('update:selected',this.selected,childVm)
                     }
                 })
@@ -50,6 +49,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang='scss' scoped>
+.tabs{
+    width: 100%;
+}
 </style>
