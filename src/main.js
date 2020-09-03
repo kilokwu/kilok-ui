@@ -21,6 +21,7 @@ import TabsHead from './components/tabs/tabs-head.vue'
 import TabsBody from './components/tabs/tabs-body.vue'
 import TabsItem from './components/tabs/tabs-item.vue'
 import TabsPane from './components/tabs/tabs-pane.vue'
+import Popover from './components/popover/popover.vue'
 Vue.component('k-input',Input)
 Vue.component('k-button',Button)
 Vue.component('k-icon',Icon)
@@ -38,6 +39,7 @@ Vue.component('k-tabs-head',TabsHead)
 Vue.component('k-tabs-body',TabsBody)
 Vue.component('k-tabs-item',TabsItem)
 Vue.component('k-tabs-pane',TabsPane)
+Vue.component('k-popover',Popover)
 Vue.use(plugin)
 new Vue({
   router,

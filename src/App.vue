@@ -20,10 +20,22 @@
     
     <k-popover>
       <template slot="content">
-        <div></div>
-        
+        <div>popover内容</div>
+      </template>
+      <template >
+        <button >点我</button>
       </template>
     </k-popover>
+  
+    <k-popover>
+      <template slot="content">
+        <div>popover内容2</div>
+      </template>
+      <template >
+        <button >点我</button>
+      </template>
+    </k-popover>
+
   </div>
 </template>
 <style lang="scss" scoped>
