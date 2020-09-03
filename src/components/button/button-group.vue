@@ -1,5 +1,5 @@
 <template>
-  <div class="g-button-group">
+  <div class="k-button-group">
     <slot></slot>
   </div>
 </template>
@@ -11,7 +11,7 @@ export default {
     for (let node of this.$el.children) {
       let name = node.nodeName.toLowerCase()
       if (name !== "button") {
-        console.warn(`g-button-group的子元素应该全是button,而你写的识${name}`);
+        console.warn(`k-button-group的子元素应该全是button,而你写的识${name}`);
       }
     }
   },
@@ -19,10 +19,10 @@ export default {
 </script>
 
 <style lang="scss">
-.g-button-group {
+.k-button-group {
   display: flex;
   vertical-align: middle;
-  > .g-button {
+  > .k-button {
     border-radius: 0;
     margin-right: 0;
     &:not(:first-child){

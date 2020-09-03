@@ -17,9 +17,13 @@
         <k-tabs-pane name="sports">体育相关信息</k-tabs-pane>
       </k-tabs-body>
     </k-tabs> -->
-    <k-tabs>
-      <div>hi</div>
-    </k-tabs>
+    
+    <k-popover>
+      <template slot="content">
+        <div></div>
+        
+      </template>
+    </k-popover>
   </div>
 </template>
 <style lang="scss" scoped>

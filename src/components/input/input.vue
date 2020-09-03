@@ -11,7 +11,7 @@
       @blur="$emit('blur',$event.target.value)"
     />
     <template v-if="error">
-      <icon name="error" class="icon-error"></icon>
+      <k-icon name="error" class="icon-error"></k-icon>
       <span class="errorMessage">{{ error }}</span>
     </template>
   </span>
@@ -22,7 +22,7 @@ import Icon from "../button/icon";
 export default {
   name: "KilokInput",
   components: {
-    icon: Icon,
+    'k-icon': Icon,
   },
   props: {
     value: {
