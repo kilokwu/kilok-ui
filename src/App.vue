@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="xx">
     <!-- <k-tabs :selected.sync="selectedTab" @update:selected="yyy" >
       <k-tabs-head >
         <template slot="actions">
@@ -18,7 +18,7 @@
       </k-tabs-body>
     </k-tabs> -->
     
-    <k-popover>
+        <k-popover>
       <template slot="content">
         <div>popover内容</div>
       </template>
@@ -35,12 +35,17 @@
         <button >点我</button>
       </template>
     </k-popover>
+  
 
   </div>
 </template>
 <style lang="scss" scoped>
 .sider { background: #333; width: 150px; } .sider.slide-enter, .sider.slide-leave-to { margin-left: -150px; } .header { height: 100px; background: #999; } .footer { height: 100px; background: #999; } .box { margin: 20px; }
-
+.xx{
+  padding-top: 100px;
+  padding-left: 100px;
+  border:1px solid red;
+}
 </style>
 <script>
 export default {
