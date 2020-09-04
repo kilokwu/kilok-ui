@@ -1,4 +1,5 @@
 <template>
+<div class="buttonWrapper">
   <button class="k-button test" :class="{ [`icon-${iconPosition}`]: true }" @click="$emit('click')">
    <k-icon class="icon" v-if="icon && !loading" :name="icon"></k-icon>
    <k-icon v-if="loading" class="loading icon" name="loading"></k-icon>
@@ -6,6 +7,7 @@
       <slot />
     </div>
   </button>
+</div>
 </template>
 
 <script>
@@ -41,9 +43,11 @@ export default {
      transform:rotate(360deg);
   }
 }
+.buttonWrapper{
+  margin:2px;
 .k-button {
   font-size: var(--font-size);
-  margin-top:.5em;margin-right:5px;height: var(--button-height);padding: 0 1em;vertical-align: middle;border-radius: var(--border-radius);
+  ;height: var(--button-height);padding: 0 1em;vertical-align: middle;border-radius: var(--border-radius);
   border: 1px solid var(--border-color);background: var(--button-bg);display: inline-flex;justify-content: center;align-items: center;
   &:hover {border-color: var(--border-color-hover);}
   &:active {background-color: var(--button-active-bg);}
@@ -55,4 +59,5 @@ export default {
     > .icon {order: 2;margin-right: 0em;margin-left: 0.1em;}}
   .loading{animation: spin 2s infinite linear;}
   }
+}
 </style>

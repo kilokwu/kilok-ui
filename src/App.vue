@@ -18,7 +18,7 @@
       </k-tabs-body>
     </k-tabs> -->
     <div style="overflow:hidden;padding:50px" >
-      <k-popover >
+      <k-popover position="top">
         <template slot="content">
           <div>popover内容</div>
         </template>
@@ -27,7 +27,25 @@
         </template>
       </k-popover>
 
-      <k-popover>
+      <k-popover position="bottom">
+        <template slot="content">
+          <div>popover内容2</div>
+        </template>
+        <template>
+          <k-button>点我</k-button>
+        </template>
+      </k-popover>
+
+      <k-popover position="left">
+        <template slot="content">
+          <div>popover内容2</div>
+        </template>
+        <template>
+          <k-button>点我</k-button>
+        </template>
+      </k-popover>
+      
+      <k-popover position="right">
         <template slot="content">
           <div>popover内容2</div>
         </template>
