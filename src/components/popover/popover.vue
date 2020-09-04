@@ -1,5 +1,5 @@
 <template>
-  <div class="k-popover" @click="onClick" ref="popover">
+  <div class="k-popover" ref="popover">
     <div
       ref="contentWrapper"
       v-if="visible"
@@ -30,7 +30,47 @@ export default {
         return ["top", "bottom", "left", "right"].indexOf(value) >= 0;
       },
     },
+    trigger: {
+      type: String,
+      default: "click",
+      validator(value) {
+        return ["click", "hover"].indexOf(value) >= 0;
+      },
+    },
   },
+
+  computed: {
+    openEvent() {
+      if (this.triggerWrapper === "click") {
+        return "click";
+      } else {
+        return "mouseenter";
+      }
+    },
+    closeEvent() {
+      if (this.triggerWrapper === "click") {
+        return "click";
+      } else {
+        return "mouseleave";
+      }
+    },
+  },
+  mounted() {
+    if (this.trigger === "click") {
+      this.$refs.popover.addEventListener("click", this.onClick);
+    } else {
+      this.$refs.popover.addEventListener("mouseenter", this.open);
+      this.$refs.popover.addEventListener("mouseleave", this.close);
+    }
+  },
+  // destroyed(){
+  //    if(this.trigger === 'click'){
+  //     this.$refs.popover.removeEventListener('click',this.onClick)
+  //   }else{
+  //     this.$refs.popover.removeEventListener('mouseenter',this.open)
+  //     this.$refs.popover.removeEventListener('mouseleave',this.close)
+  //   }
+  // },
   methods: {
     positionContent() {
       const { contentWrapper, triggerWrapper } = this.$refs;
@@ -38,19 +78,22 @@ export default {
       let { top, left, width, height } = triggerWrapper.getBoundingClientRect();
       let { height: height2 } = contentWrapper.getBoundingClientRect();
       let positions = {
-        top:{ left: left + window.scrollX, top:top + window.scrollY },
-        bottom:{ left:left + window.scrollX, top:top + height + window.scrollY },
-        left:{
-          left:left + window.scrollX ,
-          top: top + window.scrollY + (height - height2) / 2
+        top: { left: left + window.scrollX, top: top + window.scrollY },
+        bottom: {
+          left: left + window.scrollX,
+          top: top + height + window.scrollY,
         },
-        right:{
-          left:left + width + window.scrollX,
-          top:top + window.scrollY + (height - height2) / 2
-        }
-      }
-      contentWrapper.style.left = positions[this.position].left+'px'
-      contentWrapper.style.top = positions[this.position].top+'px'
+        left: {
+          left: left + window.scrollX,
+          top: top + window.scrollY + (height - height2) / 2,
+        },
+        right: {
+          left: left + width + window.scrollX,
+          top: top + window.scrollY + (height - height2) / 2,
+        },
+      };
+      contentWrapper.style.left = positions[this.position].left + "px";
+      contentWrapper.style.top = positions[this.position].top + "px";
     },
     onClickDocument(e) {
       if (
@@ -93,7 +136,6 @@ export default {
       }
     },
   },
-  mounted() {},
 };
 </script>
 <style scoped lang="scss">

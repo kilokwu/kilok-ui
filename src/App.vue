@@ -54,8 +54,8 @@
         </template>
       </k-popover>
     </div>
-    <div style="overflow:hidden;padding-top:150px;padding-bottom:40px" >
-      <k-popover position="top">
+    <div style="overflow:hidden;padding-top:150px;padding-bottom:40px"  >
+      <k-popover position="top" trigger="hover">
         <template slot="content">
           <div>popover内容</div>
         </template>
@@ -64,7 +64,7 @@
         </template>
       </k-popover>
 
-      <k-popover position="bottom">
+      <k-popover position="bottom"  trigger="hover">
         <template slot="content">
           <div>popover内容2</div>
         </template>
@@ -73,7 +73,7 @@
         </template>
       </k-popover>
 
-      <k-popover position="left">
+      <k-popover position="left"  trigger="hover">
         <template slot="content">
           <div>popover内容2</div>
         </template>
@@ -82,7 +82,7 @@
         </template>
       </k-popover>
 
-      <k-popover position="right">
+      <k-popover position="right"  trigger="hover">
         <template slot="content">
           <div>popover内容2</div>
         </template>
