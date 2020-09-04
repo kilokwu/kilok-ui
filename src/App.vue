@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="xx">
+  <div id="app" style="padding-top:100px;padding-left:100px">
     <!-- <k-tabs :selected.sync="selectedTab" @update:selected="yyy" >
       <k-tabs-head >
         <template slot="actions">
@@ -17,13 +17,13 @@
         <k-tabs-pane name="sports">体育相关信息</k-tabs-pane>
       </k-tabs-body>
     </k-tabs> -->
-    <div class="yy" @click="yyy">
+    <div style="overflow:hidden;padding:50px" >
       <k-popover >
         <template slot="content">
           <div>popover内容</div>
         </template>
         <template>
-          <button>点我</button>
+          <k-button>点我</k-button>
         </template>
       </k-popover>
 
@@ -32,7 +32,7 @@
           <div>popover内容2</div>
         </template>
         <template>
-          <button>点我</button>
+          <k-button>点我</k-button>
         </template>
       </k-popover>
     </div>
@@ -58,15 +58,7 @@
 .box {
   margin: 20px;
 }
-.xx {
-  padding-top: 100px;
-  padding-left: 100px;
-  border: 1px solid red;
-}
-.yy {
-  border: 1px solid green;
-  overflow: hidden;
-}
+
 </style>
 <script>
 export default {
