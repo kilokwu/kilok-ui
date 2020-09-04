@@ -17,7 +17,7 @@
         <k-tabs-pane name="sports">体育相关信息</k-tabs-pane>
       </k-tabs-body>
     </k-tabs> -->
-    <div style="overflow:hidden;padding:50px" >
+    <div style="overflow:hidden;padding-top:50px;padding-bottom:40px" >
       <k-popover position="top">
         <template slot="content">
           <div>popover内容</div>
@@ -44,7 +44,44 @@
           <k-button>点我</k-button>
         </template>
       </k-popover>
-      
+
+      <k-popover position="right">
+        <template slot="content">
+          <div>popover内容2</div>
+        </template>
+        <template>
+          <k-button>点我</k-button>
+        </template>
+      </k-popover>
+    </div>
+    <div style="overflow:hidden;padding-top:150px;padding-bottom:40px" >
+      <k-popover position="top">
+        <template slot="content">
+          <div>popover内容</div>
+        </template>
+        <template>
+          <k-button>点我</k-button>
+        </template>
+      </k-popover>
+
+      <k-popover position="bottom">
+        <template slot="content">
+          <div>popover内容2</div>
+        </template>
+        <template>
+          <k-button>点我</k-button>
+        </template>
+      </k-popover>
+
+      <k-popover position="left">
+        <template slot="content">
+          <div>popover内容2</div>
+        </template>
+        <template>
+          <k-button>点我</k-button>
+        </template>
+      </k-popover>
+
       <k-popover position="right">
         <template slot="content">
           <div>popover内容2</div>

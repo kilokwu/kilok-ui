@@ -46,11 +46,11 @@ export default {
         },
         right:{
           left:left + width + window.scrollX,
-          right:top + window.scrollY + (height - height2) / 2
+          top:top + window.scrollY + (height - height2) / 2
         }
       }
-      contentWrapper.style.left = x[this.position].left+'px'
-      contentWrapper.style.top = x[this.position].top+'px'
+      contentWrapper.style.left = positions[this.position].left+'px'
+      contentWrapper.style.top = positions[this.position].top+'px'
     },
     onClickDocument(e) {
       if (
