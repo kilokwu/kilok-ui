@@ -17,7 +17,8 @@
         <k-tabs-pane name="sports">体育相关信息</k-tabs-pane>
       </k-tabs-body>
     </k-tabs> -->
-    
+    <div class="yy">
+
         <k-popover>
       <template slot="content">
         <div>popover内容</div>
@@ -35,6 +36,7 @@
         <button >点我</button>
       </template>
     </k-popover>
+    </div>
   
 
   </div>
@@ -45,6 +47,9 @@
   padding-top: 100px;
   padding-left: 100px;
   border:1px solid red;
+}
+.yy{
+  border: 1px solid green;
 }
 </style>
 <script>
