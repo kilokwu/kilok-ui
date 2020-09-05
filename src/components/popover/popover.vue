@@ -115,6 +115,7 @@ export default {
     },
 
     open() {
+      console.log('open')
       this.visible = true;
       setTimeout(() => {
         this.positionContent();

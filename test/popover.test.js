@@ -30,4 +30,27 @@ describe("Popover", () => {
         })
     })
   });
+  xit('可以设置trigger',(done)=>{
+    Vue.component('k-popover',Popover)
+    const div = document.createElement("div");
+    document.body.appendChild(div);
+    div.innerHTML = `
+    <k-popover trigger = "hover" ref="a">
+    <template slot="content">弹出内容</template>
+    <button>点我</button>
+    </k-popover>
+    `
+    const vm = new Vue({
+      el:div
+    })
+    setTimeout(()=>{
+        let event = new Event('mouseenter');
+        vm.$el.dispatchEvent(event)
+        vm.$nextTick(()=>{
+            const {contentWrapper} = vm.$refs.a.$refs
+            expect(contentWrapper).to.exist
+            done()
+        })
+    },200)
+  })
 });
