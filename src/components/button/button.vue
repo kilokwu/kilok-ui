@@ -1,6 +1,6 @@
 <template>
 <div class="buttonWrapper">
-  <button class="k-button test" :class="{ [`icon-${iconPosition}`]: true }" @click="$emit('click')">
+  <button class="k-button" :class="{ [`icon-${iconPosition}`]: true }" @click="$emit('click')">
    <k-icon class="icon" v-if="icon && !loading" :name="icon"></k-icon>
    <k-icon v-if="loading" class="loading icon" name="loading"></k-icon>
     <div class="content">
