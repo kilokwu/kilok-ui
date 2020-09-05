@@ -173,6 +173,7 @@ $border-radius: 4px;
       left: 10px;
     }
     &::before {
+      border-bottom: none;
       border-top-color: black;
       top: 100%;
     }
@@ -188,6 +189,7 @@ $border-radius: 4px;
       left: 10px;
     }
     &::before {
+      border-top:none;
       border-bottom-color: black;
       bottom: 100%;
     }
@@ -205,6 +207,7 @@ $border-radius: 4px;
       transform: translateY(-50%);
     }
     &::before {
+      border-right: none;
       border-left-color: black;
       left: 100%;
     }
@@ -221,6 +224,7 @@ $border-radius: 4px;
       transform: translateY(-50%);
     }
     &::before {
+      border-left:none;
       border-right-color: black;
       right: 100%;
     }
