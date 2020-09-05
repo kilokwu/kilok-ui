@@ -19,8 +19,8 @@
     </k-tabs> -->
     <div style="overflow:hidden;padding-top:50px;padding-bottom:40px" >
       <k-popover position="top">
-        <template slot="content">
-          <div>popover内容</div>
+        <template slot="content" slot-scope="{close}">
+          <k-button @click="close">关闭</k-button>
         </template>
         <template>
           <k-button>点我</k-button>

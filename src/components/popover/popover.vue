@@ -6,7 +6,7 @@
       class="content-wrapper"
       :class="{ [`position-${position}`]: true }"
     >
-      <slot name="content"></slot>
+      <slot name="content" :close="close"></slot>
     </div>
     <span ref="triggerWrapper" style="display:inline-block">
       <slot></slot>
@@ -63,14 +63,14 @@ export default {
       this.$refs.popover.addEventListener("mouseleave", this.close);
     }
   },
-  // destroyed(){
-  //    if(this.trigger === 'click'){
-  //     this.$refs.popover.removeEventListener('click',this.onClick)
-  //   }else{
-  //     this.$refs.popover.removeEventListener('mouseenter',this.open)
-  //     this.$refs.popover.removeEventListener('mouseleave',this.close)
-  //   }
-  // },
+  destroyed(){
+     if(this.trigger === 'click'){
+      this.$refs.popover.removeEventListener('click',this.onClick)
+    }else{
+      this.$refs.popover.removeEventListener('mouseenter',this.open)
+      this.$refs.popover.removeEventListener('mouseleave',this.close)
+    }
+  },
   methods: {
     positionContent() {
       const { contentWrapper, triggerWrapper } = this.$refs;
