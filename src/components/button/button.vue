@@ -55,7 +55,7 @@ export default {
     transform: rotate(360deg);
   }
 }
-.buttonWrapper { margin: 2px;
+.buttonWrapper { margin: 2px;display: inline-block;
   .k-button { font-size: $font-size; height: $button-height; padding: 0 1em; vertical-align: middle; border-radius: $border-radius; border: 1px solid $border-color;
     background: $button-bg; display: inline-flex; justify-content: center; align-items: center;
     &:hover { border-color: $border-color-hover; }
