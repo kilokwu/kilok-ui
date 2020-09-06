@@ -1,4 +1,5 @@
 module.exports = {
+  base:'/kilok-ui/',
   title: "Kilok UI",
   description: "一个好用的UI框架",
   themeConfig: {
