@@ -27,6 +27,7 @@ export default {
       type: Boolean,
       default: false,
     },
+
     iconPosition: {
       type: String,
       default: "left",

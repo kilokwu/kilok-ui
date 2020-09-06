@@ -3,12 +3,9 @@
     <k-button>默认按钮</k-button>
     <k-button icon="settings">默认按钮</k-button>
     <k-button :loading="true">默认按钮</k-button>
-    <code>
-        <pre>
-         {{ content }}
-        </pre>
-     </code
-    >
+            <code>
+          <pre> {{ content }} </pre >
+          </code>
   </div>
 </template>
 
@@ -20,13 +17,12 @@ export default {
   },
   data() {
     return {
-      content: `<k-button>默认按钮</k-button>
+      content: `
+     <k-button>默认按钮</k-button>
      <k-button icon="settings">默认按钮</k-button>
      <k-button loading>默认按钮</k-button>`,
     };
   },
 };
 </script>
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>
