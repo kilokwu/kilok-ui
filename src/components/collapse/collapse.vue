@@ -18,18 +18,38 @@ export default {
       type: Boolean,
       default: false,
     },
-    selected:{
-        type:String
-    }
+    selected: {
+      type: Array,
+    },
   },
   provide() {
-      return {
-        eventBus: this.eventBus,
-      };
+    return {
+      eventBus: this.eventBus,
+    };
   },
-  mounted(){
-      this.eventBus.$emit('update:selected',this.selected)
-  }
+  mounted() {
+    this.eventBus.$emit("update:selected", this.selected);
+    let selectedCopy = JSON.parse(JSON.stringify(this.selected))
+    this.eventBus.$on("update:addSelected", (name) => {
+        if(this.single){
+            selectedCopy = [name]
+        }else{
+            selectedCopy.push(name);
+        }
+      this.$emit("update:selected", selectedCopy);
+      this.eventBus.$emit("update:selected", selectedCopy);
+    });
+    this.eventBus.$on("update:removeSelected", (name) => {
+      let index = selectedCopy.indexOf(name);
+      this.selected.splice(index, 1);
+      this.$emit("update:selected", selectedCopy);
+      this.eventBus.$emit("update:selected", selectedCopy);
+    });
+    this.$children.forEach((vm) => {
+      vm.single = this.single;
+      console.log(vm);
+    });
+  },
 };
 </script>
 <style scoped lang="scss">
